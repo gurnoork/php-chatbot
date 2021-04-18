@@ -34,7 +34,7 @@ if(isset($_POST['themeSelect'])){
     <title>Users</title>
     <style>
 
-.healthContainer{
+.sideContainer{
   width: 300px;
   height: 230px;
    /* background-color: rgba(0, 0, 0, 0);  */
@@ -48,7 +48,7 @@ if(isset($_POST['themeSelect'])){
  
   z-index:50;
 }
-.healthContainer .header{
+.sideContainer .header{
   margin-top:2px;
   width: 30px;
   overflow: hidden;
@@ -70,7 +70,7 @@ if(isset($_POST['themeSelect'])){
   justify-content:center;
   align-items:center;
 }
-.healthContainer .header svg{
+.sideContainer .header svg{
   color:white;
  
   height:24px;
@@ -80,10 +80,10 @@ if(isset($_POST['themeSelect'])){
   margin-left:-10px;
   transition:transform 0.3s ease;
 }
-.healthContainer .header svg:hover{
+.sideContainer .header svg:hover{
   transform:rotate(180deg);
 }
-.healthContainer .content1{
+.sideContainer .content1{
   float: left;
   height: 100%;
   overflow:hidden;
@@ -96,38 +96,66 @@ if(isset($_POST['themeSelect'])){
   border:2px solid black;
 
 }
-.healthContainer:hover{
+.sideContainer:hover{
   right:calc(100% - 300px);
   /* box-shadow: 10px 10px 10px  */
 }
-.healthContainer .content1 ul li{
+/* .sideContainer .content1 ul li{
   color: black;
   font-family:poppins;
+} */
+.form{
+  margin: 12px 16px;
+
+}
+.info{
+  margin-top:7px;
+  text-align:center;
+  font-family:poppins;
+  margin-bottom:5px;
+}
+select {
+  height: 30px;
+  width: 13%;
+  border-radius: 5px;
+}
+.theme{
+  height: 30px;
+  width: 13%;
+  border-radius: 5px;
+  outline:none;
+  border: 0;
+  background:#FF0B00;
+  box-shadow:2px 2px 4px;
+  color:white;
+}
+.theme:hover{
+  filter:brightness(0.9);
 }
 
 </style>
 </head>
 <body>
      
-<div class="healthContainer" id="tips">
+<div class="sideContainer" id="tips">
     <div class="header">
     <svg xmlns="http://www.w3.org/2000/svg" ><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg>
       
     </div>
     <div class="content1">
-    <form action="" method="post">
+    <div class="info">
+    <h3>Select your desired theme and press save theme Button</h3>
+    </div>
+    <hr>
+    <form action="" method="post" class="form">
       <select name="themeSelect" id="themeSelect">
-        <option value="style3" <?= getTheme() === "style3" ? "selected" :""  ?> >Default</option>
-        <option value="style4" <?= getTheme() === "style4" ? "selected" :""  ?>>Decode</option>
-        <option value="red" <?= getTheme() === "style5" ? "selected" :""  ?>>Red</option>
+        <option value="light" <?= getTheme() === "light" ? "selected" :""  ?> >Light</option>
+        <option value="dark" <?= getTheme() === "dark" ? "selected" :""  ?>>Dark</option>
+        <option value="color" <?= getTheme() === "color" ? "selected" :""  ?>>Vibrant</option>
       </select>
-      <input type="submit" value="Save Theme">
+      <input type="submit" value="Save Theme" class="theme">
     </form>
-        <ul type="disc">
-      
-          
-            <li>Orange juice provides energy,increases urinary output and promotes body resitance against infections ,therby hastening recovery</li>
-        </ul>
+       
     </div>
 </div>
 
